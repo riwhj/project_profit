@@ -28,7 +28,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee name = " + name + ", em_id = " + em_id + " ";
+		return "Employee name  " + name + ", em_id = " + em_id + " ";
 	}
 	
 	
