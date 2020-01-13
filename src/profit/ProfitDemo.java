@@ -2,8 +2,6 @@ package profit;
 
 import java.util.Scanner;
 
-import testbyprofit.Employee;
-import testbyprofit.Salary;
 
 public class ProfitDemo {
 
@@ -33,14 +31,15 @@ public class ProfitDemo {
 				System.out.println("Monthly sales : ") ;
 				sales = sc.nextDouble();
 				
-				if (sales<=25000) {
+				if (sales<=50000) {
 					profit = (0.01*sales) ;
-				} else if (sales>=25001 && sales<=50000) {
+				} else if (sales>=50001 && sales<=100000) {
 					profit = (0.02*sales);
-				} else if (sales > 50001) {
+				} else if (sales > 100001) {
 					profit = (0.03*sales) ;
 				}
 				sa[i] = new Salary (salary,profit); 
+				
 			}
 			for (int i=0;i<em.length;i++) 
 				System.out.println(em[i].getName() +" and bonus : " +sa[i].toString()+ " baht ");
