@@ -1,6 +1,5 @@
 package profit;
 
-
 import java.util.Scanner;
 
 
@@ -15,7 +14,7 @@ public class ProfitDemo {
 		double sales;
 		double profit = 0 ;
 		double bonus ;
-
+		
 		char ch;
 		double commission;
 		Employee[] em = new Employee [2] ;
@@ -29,35 +28,34 @@ public class ProfitDemo {
 				em[i] = new Employee (name,id);
 				System.out.println("salary : ") ;
 				salary = sc.nextDouble();
-
+				
 				System.out.println("Monthly sales : ") ;
 				sales = sc.nextDouble();
-
-				if (sales<=50000) {
+				
+				if (sales<=25000) {
 					profit = (0.01*sales) ;
-				} else if (sales>=50001 && sales<=100001) {
+				} else if (sales>=25001 && sales<=50000) {
 					profit = (0.02*sales);
-				} else if (sales > 100001) {
+				} else if (sales > 50001) {
 					profit = (0.03*sales) ;
 				}
-				sa[i] = new Salary (salary,profit);
-
-				if(sa[i].getSalary ()<15000 && sales > 100001) {
-					profit = profit+3000;
-					sa[i].setComisstion (profit);
+				sa[i] = new Salary (salary,profit); 
+				commission = salary+profit;
+				
+				if(commission<18000) {
+					commission=18000;
+					sa[i].setSalary(commission);
+					
 				}
 			}
-			for (int i=0;i<em.length;i++)
+			for (int i=0;i<em.length;i++) 
 				System.out.println(em[i].getName() +" and bonus : " +sa[i].toString()+ " baht ");
-
-			System.out.println("Do you want to continue[y/n] : ");
-			ch = sc.next().charAt(0);
+		
+		System.out.println("Do you want to continue[y/n] : ");
+		ch = sc.next().charAt(0);
 		}while  (ch=='y') ;
-		System.out.println("Bye Bye");
-
+			System.out.println("Bye Bye");
+			
 	}
-
-}
-
 
 }
